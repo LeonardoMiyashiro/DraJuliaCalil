@@ -51,12 +51,6 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
       rel="stylesheet"
     />
-    <!-- Calendly: dns-prefetch + preconnect antecipa a conexão sem bloquear o render -->
-    <link rel="dns-prefetch" href="https://assets.calendly.com" />
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
-    <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="preconnect" href="https://calendly.com" crossorigin />
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -80,7 +74,6 @@
         }
       }
     </script>
-
     <style>
       /* ===== RESET & BASE ===== */
       *,
@@ -109,7 +102,6 @@
         border: none;
         background: none;
       }
-
       /* ===== TOKENS ===== */
       :root {
         --cream: #fbf7f5;
@@ -137,7 +129,6 @@
         --radius-lg: 32px;
         --radius-pill: 100px;
       }
-
       /* ===== TYPOGRAPHY ===== */
       body {
         font-family: "DM Sans", sans-serif;
@@ -173,7 +164,6 @@
       p {
         line-height: 1.75;
       }
-
       /* ===== UTILITIES ===== */
       .container {
         max-width: 1180px;
@@ -201,7 +191,6 @@
         font-size: 1.05rem;
         font-weight: 300;
       }
-
       /* ===== BUTTONS ===== */
       .btn {
         display: inline-flex;
@@ -258,19 +247,6 @@
         background: var(--forest);
         color: var(--white);
       }
-      /* Calendly CTA button variant */
-      .btn-calendly {
-        background: var(--sage-light);
-        color: var(--forest-deep);
-        border: 1.5px solid var(--sage);
-      }
-      .btn-calendly:hover {
-        background: var(--sage);
-        color: var(--forest-deep);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(135, 75, 70, 0.18);
-      }
-
       /* ===== WHATSAPP FLOAT ===== */
       .wa-float {
         position: fixed;
@@ -315,7 +291,6 @@
           opacity: 0;
         }
       }
-
       /* ===== HEADER ===== */
       .header {
         position: fixed;
@@ -462,7 +437,6 @@
         border-radius: 2px;
         transition: all 0.3s;
       }
-
       /* ===== MOBILE NAV ===== */
       .mobile-nav {
         display: none;
@@ -497,7 +471,6 @@
         margin-top: 0.5rem;
         min-height: 52px;
       }
-
       /* ===== HERO ===== */
       .hero {
         min-height: 100vh;
@@ -602,7 +575,6 @@
         font-size: 0.85rem;
         color: var(--text-light);
       }
-
       /* Hero Visual */
       .hero-visual {
         display: flex;
@@ -654,7 +626,6 @@
         color: var(--text-light);
         margin-top: 0.3rem;
       }
-
       /* ===== DIFERENCIAIS ===== */
       .diferenciais {
         background: var(--white);
@@ -707,7 +678,6 @@
         color: var(--text-muted);
         line-height: 1.7;
       }
-
       /* ===== TRATAMENTOS ===== */
       .tratamentos {
         background: var(--cream);
@@ -777,7 +747,6 @@
       .trat-link:hover {
         gap: 8px;
       }
-
       /* ===== SOBRE ===== */
       .sobre {
         background: var(--forest-deep);
@@ -871,180 +840,6 @@
         border-radius: 50%;
         flex-shrink: 0;
       }
-
-      /* ===== AGENDAMENTO ONLINE (CALENDLY) ===== */
-      .agendamento {
-        background: var(--white);
-        padding: clamp(4rem, 8vw, 6.5rem) 0;
-      }
-      .agendamento-header {
-        text-align: center;
-        max-width: 620px;
-        margin: 0 auto 3rem;
-      }
-      .agendamento-header h2 {
-        margin-top: 0.25rem;
-        margin-bottom: 0.75rem;
-      }
-      .agendamento-header p {
-        color: var(--text-muted);
-        font-size: 1.05rem;
-        font-weight: 300;
-      }
-
-      /* Calendly embed container — full width */
-      .calendly-wrap {
-        width: 100%;
-        max-width: 100%;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
-        border: 1px solid rgba(201, 148, 144, 0.18);
-        background: var(--cream);
-        min-height: 700px;
-        position: relative;
-      }
-
-      /* Loader enquanto o Calendly não renderiza */
-      .calendly-loader {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        background: var(--cream);
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-        z-index: 2;
-      }
-      .calendly-loader.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .calendly-loader-ring {
-        width: 48px;
-        height: 48px;
-        border: 3px solid rgba(135, 75, 70, 0.15);
-        border-top-color: var(--forest);
-        border-radius: 50%;
-        animation: spin 0.9s linear infinite;
-      }
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .calendly-loader p {
-        font-size: 0.88rem;
-        color: var(--text-light);
-      }
-
-      /* Inline widget ocupa toda a largura do wrapper */
-      .calendly-inline-widget {
-        min-width: 100% !important;
-        width: 100% !important;
-        border: none !important;
-        display: block;
-      }
-
-      /* ===== CALENDLY PLACEHOLDER ===== */
-      .calendly-placeholder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 320px;
-        padding: 3rem 2rem;
-        cursor: pointer;
-        background: linear-gradient(
-          135deg,
-          var(--cream) 0%,
-          var(--blush-pale) 100%
-        );
-        border-radius: var(--radius-lg);
-        transition: background 0.3s ease;
-      }
-      .calendly-placeholder:hover {
-        background: linear-gradient(
-          135deg,
-          var(--blush-pale) 0%,
-          var(--warm-beige) 100%
-        );
-      }
-      .cpl-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.25rem;
-        text-align: center;
-        max-width: 420px;
-      }
-      .cpl-icon {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: var(--white);
-        border: 1.5px solid rgba(135, 75, 70, 0.12);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--forest);
-        box-shadow: var(--shadow-sm);
-      }
-      .cpl-text h3 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.6rem;
-        color: var(--forest-deep);
-        margin-bottom: 0.35rem;
-      }
-      .cpl-text p {
-        font-size: 1rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-      }
-      .cpl-btn {
-        background: var(--forest);
-        color: var(--white);
-        border: none;
-        padding: 16px 36px;
-        border-radius: var(--radius-pill);
-        font-family: "DM Sans", sans-serif;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        letter-spacing: 0.02em;
-      }
-      .cpl-btn:hover {
-        background: var(--forest-deep);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(135, 75, 70, 0.28);
-      }
-      .cpl-hint {
-        font-size: 0.78rem;
-        color: var(--text-light);
-      }
-
-      /* Transição suave ao revelar o widget */
-      #calendly-widget {
-        transition: opacity 0.4s ease;
-      }
-      #calendly-widget.visible-widget {
-        opacity: 1;
-      }
-
-      /* ===== BOTÃO ALTERNATIVO ABAIXO DO WIDGET ===== */
-      .agendamento-alt {
-        text-align: center;
-        margin-top: 2rem;
-      }
-      .agendamento-alt p {
-        font-size: 0.9rem;
-        color: var(--text-light);
-        margin-bottom: 0.75rem;
-      }
-
       /* ===== ATENDIMENTO ===== */
       .atendimento {
         background: var(--white);
@@ -1102,7 +897,6 @@
       .atendimento-cta {
         text-align: center;
       }
-
       /* ===== PARA QUEM ===== */
       .para-quem {
         background: var(--warm-beige);
@@ -1158,7 +952,6 @@
         color: var(--forest-deep);
         line-height: 1.65;
       }
-
       /* ===== DEPOIMENTOS ===== */
       .depoimentos {
         background: var(--cream);
@@ -1212,7 +1005,6 @@
         margin-top: 1.5rem;
         font-style: italic;
       }
-
       /* ===== GOOGLE REVIEWS CTA ===== */
       .dep-google-cta {
         margin-top: 2.5rem;
@@ -1249,7 +1041,6 @@
         font-size: 0.82rem;
         color: var(--text-muted);
       }
-
       /* ===== LOCALIZAÇÃO ===== */
       .localizacao {
         background: var(--white);
@@ -1322,7 +1113,6 @@
         width: 100%;
         justify-content: center;
       }
-
       /* ===== FAQ ===== */
       .faq {
         background: var(--cream);
@@ -1397,7 +1187,6 @@
         max-height: 300px;
         padding-bottom: 1.4rem;
       }
-
       /* ===== CTA FINAL ===== */
       .cta-final {
         background: var(--forest-deep);
@@ -1467,33 +1256,12 @@
         transform: translateY(-3px);
         box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
       }
-      .cta-btn-calendly-final {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        background: transparent;
-        color: var(--sage-light);
-        padding: 22px 36px;
-        border-radius: var(--radius-pill);
-        font-size: 1.05rem;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        border: 1.5px solid rgba(201, 148, 144, 0.4);
-        transition: all 0.3s;
-        cursor: pointer;
-      }
-      .cta-btn-calendly-final:hover {
-        background: rgba(201, 148, 144, 0.12);
-        border-color: var(--sage);
-        transform: translateY(-2px);
-      }
       .cta-micro {
         font-size: 0.82rem;
         color: rgba(255, 255, 255, 0.25);
         margin-top: 1.5rem;
         display: block;
       }
-
       /* ===== REELS INSTAGRAM ===== */
       .reels {
         background: var(--white);
@@ -1521,7 +1289,6 @@
         width: 100% !important;
         border-radius: var(--radius-md) !important;
       }
-
       /* ===== FOOTER ===== */
       footer {
         background: var(--forest-deep);
@@ -1577,33 +1344,6 @@
         color: rgba(255, 255, 255, 0.25);
         line-height: 1.6;
       }
-
-      /* ===== HERO SOCIAL PROOF ===== */
-      .hero-social-proof {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 1.75rem;
-        background: var(--white);
-        border: 1px solid rgba(201, 148, 144, 0.25);
-        border-radius: var(--radius-pill);
-        padding: 8px 16px;
-      }
-      .hsp-stars {
-        color: #f4b942;
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        flex-shrink: 0;
-      }
-      .hsp-text {
-        font-size: 0.78rem;
-        color: var(--text-muted);
-      }
-      .hsp-text strong {
-        color: var(--forest-deep);
-        font-weight: 500;
-      }
-
       /* ===== ANIMATIONS ===== */
       .anim {
         opacity: 0;
@@ -1628,7 +1368,6 @@
       .anim-delay-4 {
         transition-delay: 0.4s;
       }
-
       /* ===== RESPONSIVE ===== */
       @media (max-width: 900px) {
         .sobre-inner {
@@ -1671,11 +1410,7 @@
           align-items: flex-start;
           gap: 1rem;
         }
-        .calendly-wrap {
-          border-radius: var(--radius-md);
-        }
       }
-
       @media (max-width: 768px) {
         html {
           font-size: 16px;
@@ -1746,10 +1481,6 @@
         .hero-bullets li {
           font-size: 0.9rem;
         }
-        .hero-social-proof {
-          margin: 0 auto 1.5rem;
-          max-width: 90%;
-        }
         .hero-ctas {
           justify-content: center;
           flex-direction: column;
@@ -1772,8 +1503,7 @@
         .depoimentos,
         .localizacao,
         .reels,
-        .faq,
-        .agendamento {
+        .faq {
           padding: 3.5rem 0;
         }
         .diferenciais-header {
@@ -1871,13 +1601,6 @@
           max-width: 340px;
           justify-content: center;
         }
-        .cta-btn-calendly-final {
-          padding: 16px 28px;
-          font-size: 0.95rem;
-          width: 100%;
-          max-width: 340px;
-          justify-content: center;
-        }
         .reels-grid {
           grid-template-columns: 1fr;
           gap: 1rem;
@@ -1892,16 +1615,7 @@
         .footer-brand p {
           max-width: 100%;
         }
-        /* Calendly mobile */
-        .calendly-wrap {
-          min-height: 580px;
-          border-radius: var(--radius-md);
-        }
-        .agendamento-header {
-          margin-bottom: 2rem;
-        }
       }
-
       @media (max-width: 420px) {
         html {
           font-size: 15px;
@@ -1951,11 +1665,7 @@
           bottom: 1.25rem;
           right: 1.25rem;
         }
-        .calendly-wrap {
-          min-height: 560px;
-        }
       }
-
       @media (max-width: 768px) and (orientation: landscape) {
         .hero {
           min-height: auto;
@@ -1991,7 +1701,6 @@
         />
       </svg>
     </a>
-
     <!-- ===== HEADER ===== -->
     <header class="header" id="header">
       <div class="container">
@@ -2003,15 +1712,19 @@
           <nav class="nav" aria-label="Menu principal">
             <a href="#tratamentos">Tratamentos</a>
             <a href="#sobre">Sobre</a>
-            <a href="#agendamento">Agendar</a>
             <a href="#reels">Vídeos</a>
             <a href="#atendimento">Atendimento</a>
             <a href="#localizacao">Localização</a>
             <a href="#faq">Dúvidas</a>
           </nav>
-          <a href="#agendamento" class="header-cta">
+          <a
+            href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+            class="header-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span class="header-cta-dot" aria-hidden="true"></span>
-            Agendar avaliação
+            Agendar pelo WhatsApp
           </a>
           <button
             type="button"
@@ -2025,21 +1738,22 @@
         </div>
       </div>
     </header>
-
     <!-- Mobile Nav -->
     <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
       <a href="#tratamentos">Tratamentos</a>
       <a href="#sobre">Sobre</a>
-      <a href="#agendamento">Agendar online</a>
       <a href="#reels">Vídeos</a>
       <a href="#atendimento">Atendimento</a>
       <a href="#localizacao">Localização</a>
       <a href="#faq">Dúvidas</a>
-      <a href="#agendamento" class="btn btn-primary"
-        >Agendar avaliação online</a
+      <a
+        href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Agendar pelo WhatsApp</a
       >
     </nav>
-
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
       <div class="hero-blob-1" aria-hidden="true"></div>
@@ -2075,47 +1789,36 @@
                 >Avaliação, limpeza, clareamento e mais
               </li>
               <li>
-                <span class="hero-bullet-dot" aria-hidden="true"></span
-                >Agendamento online — sem ligar, sem esperar
+                <span class="hero-bullet-dot" aria-hidden="true"></span>Agende
+                pelo WhatsApp — rápido e sem burocracia
               </li>
             </ul>
-            <div class="hero-social-proof anim anim-delay-2">
-              <div class="hsp-stars">★★★★★</div>
-              <div class="hsp-text">
-                Mais de <strong>50 pacientes</strong> atendidos em São José do
-                Rio Preto
-              </div>
-            </div>
             <div class="hero-ctas anim anim-delay-3">
-              <a href="#agendamento" class="btn btn-primary">
+              <a
+                href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   width="17"
                   height="17"
                   viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  fill="currentColor"
                   aria-hidden="true"
                 >
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                  />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.136 1.532 5.874L0 24l6.278-1.525A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.787 9.787 0 01-5.102-1.434l-.366-.218-3.726.905.938-3.626-.237-.378A9.784 9.784 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182c5.42 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"
+                  />
                 </svg>
-                Agendar avaliação online
+                Agendar pelo WhatsApp
               </a>
-              <a
-                href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
-                class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                >WhatsApp</a
-              >
             </div>
             <p class="hero-micro anim anim-delay-4">
-              Escolha dia e horário na agenda online · Sem burocacria
+              Resposta rápida · Escolha o melhor horário direto no WhatsApp
             </p>
           </div>
           <div class="hero-visual anim anim-delay-2">
@@ -2142,7 +1845,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== DIFERENCIAIS ===== -->
     <section class="diferenciais" id="diferenciais">
       <div class="container">
@@ -2182,18 +1884,9 @@
               começa desde a recepção.
             </p>
           </div>
-          <div class="dif-card anim anim-delay-4">
-            <div class="dif-icon" aria-hidden="true">📍</div>
-            <h3>Referência local em SJRP</h3>
-            <p>
-              Formada e atuante em São José do Rio Preto — uma dentista que
-              conhece e se importa com a comunidade local.
-            </p>
-          </div>
         </div>
       </div>
     </section>
-
     <!-- ===== TRATAMENTOS ===== -->
     <section class="tratamentos" id="tratamentos">
       <div class="container">
@@ -2216,7 +1909,13 @@
               Consulta completa para entender sua saúde bucal, tirar dúvidas e
               orientar os próximos passos com clareza.
             </p>
-            <a href="#agendamento" class="trat-link">Agendar agora →</a>
+            <a
+              href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+              class="trat-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Agendar agora →</a
+            >
           </div>
           <div class="trat-card anim anim-delay-1">
             <div class="trat-icon" aria-hidden="true">✨</div>
@@ -2264,21 +1963,6 @@
             >
           </div>
           <div class="trat-card anim anim-delay-1">
-            <div class="trat-icon" aria-hidden="true">💎</div>
-            <h3>Tratamentos estéticos</h3>
-            <p>
-              Procedimentos voltados para a estética do sorriso, avaliados
-              individualmente em consulta.
-            </p>
-            <a
-              href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20saber%20mais%20sobre%20Tratamentos%20Estéticos."
-              class="trat-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Quero saber mais →</a
-            >
-          </div>
-          <div class="trat-card anim anim-delay-2">
             <div class="trat-icon" aria-hidden="true">🚨</div>
             <h3>Urgências odontológicas</h3>
             <p>
@@ -2293,7 +1977,7 @@
               >Quero saber mais →</a
             >
           </div>
-          <div class="trat-card anim anim-delay-3">
+          <div class="trat-card anim anim-delay-2">
             <div class="trat-icon" aria-hidden="true">✂️</div>
             <h3>Extrações simples</h3>
             <p>
@@ -2308,7 +1992,7 @@
               >Quero saber mais →</a
             >
           </div>
-          <div class="trat-card anim anim-delay-4">
+          <div class="trat-card anim anim-delay-3">
             <div class="trat-icon" aria-hidden="true">📅</div>
             <h3>Acompanhamento</h3>
             <p>
@@ -2326,7 +2010,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== SOBRE ===== -->
     <section class="sobre" id="sobre">
       <div class="container">
@@ -2372,118 +2055,17 @@
               <li>Perfil comunicativo, atencioso e acolhedor</li>
               <li>Atendimento em São José do Rio Preto / SP</li>
             </ul>
-            <a href="#agendamento" class="btn btn-sage"
-              >Agendar avaliação com a Dra. Júlia →</a
+            <a
+              href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+              class="btn btn-sage"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Agendar pelo WhatsApp →</a
             >
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ===== AGENDAMENTO ONLINE (CALENDLY) ===== -->
-    <section class="agendamento" id="agendamento">
-      <div class="container">
-        <div class="agendamento-header anim">
-          <span class="section-tag">Agendamento online</span>
-          <h2>Escolha o melhor dia e horário para você</h2>
-          <p>
-            Agende diretamente na agenda da Dra. Júlia — sem ligar, sem esperar
-            resposta. Simples, rápido e confirmado na hora.
-          </p>
-        </div>
-
-        <div class="calendly-wrap anim anim-delay-1" id="calendly-wrap">
-          <!-- PLACEHOLDER: visível antes do Calendly carregar -->
-          <div
-            class="calendly-placeholder"
-            id="calendly-placeholder"
-            role="button"
-            tabindex="0"
-            aria-label="Clique para abrir a agenda de agendamentos"
-          >
-            <div class="cpl-inner">
-              <div class="cpl-icon" aria-hidden="true">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                  <line x1="8" y1="14" x2="8.01" y2="14" stroke-width="2.5" />
-                  <line x1="12" y1="14" x2="12.01" y2="14" stroke-width="2.5" />
-                  <line x1="16" y1="14" x2="16.01" y2="14" stroke-width="2.5" />
-                </svg>
-              </div>
-              <div class="cpl-text">
-                <h3>Agenda da Dra. Júlia</h3>
-                <p>
-                  Clique para ver os horários disponíveis e confirmar sua
-                  avaliação
-                </p>
-              </div>
-              <button type="button" class="cpl-btn" id="calendly-trigger">
-                Ver horários disponíveis
-              </button>
-              <p class="cpl-hint">
-                Sem cadastro obrigatório · Confirmação imediata
-              </p>
-            </div>
-          </div>
-
-          <!-- Loader animado enquanto o Calendly inicializa -->
-          <div
-            class="calendly-loader"
-            id="calendly-loader"
-            aria-hidden="true"
-            style="display: none"
-          >
-            <div class="calendly-loader-ring"></div>
-            <p>Carregando agenda…</p>
-          </div>
-
-          <!-- Container do widget — preenchido dinamicamente via JS -->
-          <div
-            id="calendly-widget"
-            style="min-width: 100%; height: 700px; display: none"
-          ></div>
-        </div>
-
-        <div class="agendamento-alt anim anim-delay-2">
-          <p>Prefere agendar pelo WhatsApp?</p>
-          <a
-            href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
-            class="btn btn-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
-              />
-              <path
-                d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.136 1.532 5.874L0 24l6.278-1.525A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.787 9.787 0 01-5.102-1.434l-.366-.218-3.726.905.938-3.626-.237-.378A9.784 9.784 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182c5.42 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"
-              />
-            </svg>
-            Falar pelo WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== ATENDIMENTO ===== -->
     <section class="atendimento" id="atendimento">
       <div class="container">
@@ -2494,10 +2076,10 @@
         <div class="steps-wrap anim anim-delay-1">
           <div class="step">
             <span class="step-num" aria-hidden="true">01</span>
-            <h3>Agende online ou pelo WhatsApp</h3>
+            <h3>Agende pelo WhatsApp</h3>
             <p>
-              Use a agenda online ou envie mensagem para verificar os horários
-              disponíveis sem burocracia.
+              Envie uma mensagem para verificar os horários disponíveis e
+              confirmar sua consulta sem burocracia.
             </p>
           </div>
           <div class="step">
@@ -2526,13 +2108,16 @@
           </div>
         </div>
         <div class="atendimento-cta anim anim-delay-2">
-          <a href="#agendamento" class="btn btn-primary"
-            >Agendar avaliação online →</a
+          <a
+            href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Agendar pelo WhatsApp →</a
           >
         </div>
       </div>
     </section>
-
     <!-- ===== PARA QUEM ===== -->
     <section class="para-quem" id="para-quem">
       <div class="container">
@@ -2563,24 +2148,27 @@
               </li>
               <li class="pq-item">
                 <div class="pq-check" aria-hidden="true">✓</div>
-                Com agendamento online prático e rápido
+                Com agendamento fácil pelo WhatsApp
               </li>
             </ul>
           </div>
           <div class="anim anim-delay-1">
             <div class="pq-quote">
               "Se você está adiando sua consulta odontológica por medo, dúvida
-              ou falta de tempo, o primeiro passo pode ser simples: escolha um
-              horário na agenda e confirme em menos de 2 minutos."
+              ou falta de tempo, o primeiro passo pode ser simples: mande uma
+              mensagem pelo WhatsApp e confirme em minutos."
             </div>
-            <a href="#agendamento" class="btn btn-primary"
-              >Agendar avaliação →</a
+            <a
+              href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Agendar pelo WhatsApp →</a
             >
           </div>
         </div>
       </div>
     </section>
-
     <!-- ===== DEPOIMENTOS ===== -->
     <section class="depoimentos" id="depoimentos">
       <div class="container">
@@ -2664,7 +2252,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== LOCALIZAÇÃO ===== -->
     <section class="localizacao" id="localizacao">
       <div class="container">
@@ -2716,15 +2303,18 @@
                 rel="noopener noreferrer"
                 >📍 Ver rota no Google Maps</a
               >
-              <a href="#agendamento" class="btn btn-primary"
-                >Agendar avaliação online</a
+              <a
+                href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Agendar pelo WhatsApp</a
               >
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- ===== REELS INSTAGRAM ===== -->
     <section class="reels" id="reels">
       <div class="container">
@@ -2792,7 +2382,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== FAQ ===== -->
     <section class="faq" id="faq">
       <div class="container">
@@ -2807,10 +2396,9 @@
               <span class="faq-plus" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer">
-              Você pode usar a agenda online nesta página — é só escolher o dia
-              e horário que melhor funcionam para você e confirmar. Também é
-              possível agendar pelo WhatsApp se preferir falar diretamente com o
-              consultório.
+              É só enviar uma mensagem pelo WhatsApp — (17) 99637-7531. A
+              resposta é rápida e você combina o melhor dia e horário
+              diretamente com o consultório, sem burocracia.
             </div>
           </div>
           <div class="faq-item" role="listitem">
@@ -2842,7 +2430,8 @@
             <div class="faq-answer">
               O site apresenta os principais atendimentos disponíveis, mas a
               indicação adequada depende da avaliação individual de cada
-              paciente. Entre em contato para saber mais sobre o seu caso.
+              paciente. Entre em contato pelo WhatsApp para saber mais sobre o
+              seu caso.
             </div>
           </div>
           <div class="faq-item" role="listitem">
@@ -2870,7 +2459,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== CTA FINAL ===== -->
     <section class="cta-final">
       <div class="cta-blob" aria-hidden="true"></div>
@@ -2880,42 +2468,22 @@
             >Dê o primeiro passo</span
           >
           <h2>
-            Está adiando sua consulta? A agenda da Dra. Júlia está aberta para
-            você.
+            Está adiando sua consulta? Mande uma mensagem — a resposta é rápida.
           </h2>
           <p>
-            Agende online agora — sem formulário, sem fila de espera. Escolha o
-            horário que funciona para você e confirme em segundos.
+            Agende pelo WhatsApp agora — sem formulário, sem fila de espera.
+            Escolha o horário que funciona para você e confirme em segundos.
           </p>
           <div class="cta-btns-group">
-            <a href="#agendamento" class="cta-btn-big">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              Agendar avaliação online
-            </a>
             <a
               href="https://wa.me/5517996377531?text=Olá%2C%20Dra.%20Júlia%21%20Gostaria%20de%20agendar%20uma%20avaliação."
-              class="cta-btn-calendly-final"
+              class="cta-btn-big"
               target="_blank"
               rel="noopener noreferrer"
             >
               <svg
-                width="18"
-                height="18"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 aria-hidden="true"
@@ -2927,7 +2495,7 @@
                   d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.136 1.532 5.874L0 24l6.278-1.525A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.787 9.787 0 01-5.102-1.434l-.366-.218-3.726.905.938-3.626-.237-.378A9.784 9.784 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182c5.42 0 9.818 4.397 9.818 9.818 0 5.42-4.397 9.818-9.818 9.818z"
                 />
               </svg>
-              Ou fale pelo WhatsApp
+              Agendar pelo WhatsApp
             </a>
           </div>
           <span class="cta-micro"
@@ -2937,7 +2505,6 @@
         </div>
       </div>
     </section>
-
     <!-- ===== FOOTER ===== -->
     <footer>
       <div class="container">
@@ -2958,7 +2525,6 @@
             <a href="#inicio">Início</a>
             <a href="#tratamentos">Tratamentos</a>
             <a href="#sobre">Sobre</a>
-            <a href="#agendamento">Agendar online</a>
             <a href="#localizacao">Localização</a>
             <a href="#faq">Dúvidas</a>
           </div>
@@ -2989,19 +2555,16 @@
         </div>
       </div>
     </footer>
-
     <!-- ===== SCRIPTS ===== -->
     <script>
       (function () {
         "use strict";
-
         /* ---- Iframe guard ---- */
         if (window.self !== window.top) {
           document.body.innerHTML =
             '<p style="padding:2rem;font-family:sans-serif">Este site não pode ser carregado em iframe.</p>';
           return;
         }
-
         /* ---- Header scroll ---- */
         var header = document.getElementById("header");
         if (header) {
@@ -3013,7 +2576,6 @@
             { passive: true },
           );
         }
-
         /* ---- Hamburger menu ---- */
         var hamburger = document.getElementById("hamburger");
         var mobileNav = document.getElementById("mobile-nav");
@@ -3029,7 +2591,6 @@
             });
           });
         }
-
         /* ---- FAQ accordion ---- */
         document.querySelectorAll(".faq-btn").forEach(function (btn) {
           btn.addEventListener("click", function () {
@@ -3047,7 +2608,6 @@
             }
           });
         });
-
         /* ---- Scroll animations ---- */
         var animEls = document.querySelectorAll(".anim");
         if ("IntersectionObserver" in window) {
@@ -3070,7 +2630,6 @@
             el.classList.add("visible");
           });
         }
-
         /* ---- Smooth scroll ---- */
         document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
           anchor.addEventListener("click", function (e) {
@@ -3087,201 +2646,8 @@
             }
           });
         });
-
-        /* ============================================================
-     CALENDLY — AUTO-INIT + SCROLL LOCK
-     1. Assets pré-carregados com 800px de antecipação
-     2. Widget inicia automaticamente ao entrar no viewport (sem clique obrigatório)
-     3. Clique no placeholder/botão inicia imediatamente (sem esperar o scroll)
-     4. Scroll lock: captura a posição Y antes do initInlineWidget e restaura logo
-        depois para evitar o salto para o topo que o Calendly causa
-  ============================================================ */
-
-        var CALENDLY_URL =
-          "https://calendly.com/drajuliacalil/consulta?hide_gdpr_banner=1&primary_color=874b46";
-        var CALENDLY_CSS =
-          "https://assets.calendly.com/assets/external/widget.css";
-        var CALENDLY_JS =
-          "https://assets.calendly.com/assets/external/widget.js";
-
-        var calendlyLoaded = false;
-        var widgetInitiated = false;
-        var pendingInit = false;
-
-        var wrap = document.getElementById("calendly-wrap");
-        var placeholder = document.getElementById("calendly-placeholder");
-        var loader = document.getElementById("calendly-loader");
-        var widgetEl = document.getElementById("calendly-widget");
-
-        /* -- Estado de visibilidade -- */
-        function showLoader() {
-          if (placeholder) placeholder.style.display = "none";
-          if (loader) loader.style.display = "flex";
-          if (widgetEl) widgetEl.style.display = "none";
-        }
-        function showWidget() {
-          if (loader) loader.style.display = "none";
-          if (widgetEl) {
-            widgetEl.style.display = "block";
-            widgetEl.classList.add("visible-widget");
-          }
-        }
-
-        /* -- Scroll lock: evita que o Calendly jogue a página para o topo -- */
-        function initWidgetWithScrollLock() {
-          var savedY = window.pageYOffset || document.documentElement.scrollTop;
-
-          window.Calendly.initInlineWidget({
-            url: CALENDLY_URL,
-            parentElement: widgetEl,
-          });
-
-          /* Restaura posição imediatamente e por mais 2 ciclos (segurança) */
-          window.scrollTo(0, savedY);
-          requestAnimationFrame(function () {
-            window.scrollTo(0, savedY);
-            requestAnimationFrame(function () {
-              window.scrollTo(0, savedY);
-            });
-          });
-
-          /* Segundo lock via scroll event: bloqueia qualquer scroll nos próximos 600ms */
-          var locked = true;
-          var lockScroll = function () {
-            if (locked) window.scrollTo(0, savedY);
-          };
-          window.addEventListener("scroll", lockScroll, { passive: true });
-          setTimeout(function () {
-            locked = false;
-            window.removeEventListener("scroll", lockScroll);
-          }, 600);
-        }
-
-        /* -- Inicia o widget -- */
-        function initWidget() {
-          if (widgetInitiated) return;
-          if (
-            typeof window.Calendly === "undefined" ||
-            typeof window.Calendly.initInlineWidget !== "function"
-          ) {
-            pendingInit = true;
-            return;
-          }
-          widgetInitiated = true;
-          showLoader();
-          initWidgetWithScrollLock();
-        }
-
-        /* -- Carrega CSS + JS do Calendly (uma única vez) -- */
-        function loadCalendlyAssets(callback) {
-          if (calendlyLoaded) {
-            if (callback) callback();
-            return;
-          }
-          calendlyLoaded = true;
-
-          var link = document.createElement("link");
-          link.rel = "stylesheet";
-          link.href = CALENDLY_CSS;
-          document.head.appendChild(link);
-
-          var script = document.createElement("script");
-          script.src = CALENDLY_JS;
-          script.async = true;
-          script.onload = function () {
-            if (pendingInit) initWidget();
-            if (callback) callback();
-          };
-          document.head.appendChild(script);
-        }
-
-        /* -- Mensagens do iframe Calendly → esconde loader quando renderizado -- */
-        window.addEventListener("message", function (e) {
-          if (!e.data || typeof e.data !== "object" || !e.data.event) return;
-          var ev = e.data.event;
-          if (
-            ev === "calendly.page_viewed" ||
-            ev === "calendly.event_type_viewed"
-          ) {
-            showWidget();
-          }
-        });
-
-        /* -- Fallback: mostra widget após 8s independente de eventos -- */
-        function startFallbackTimer() {
-          setTimeout(function () {
-            if (loader && loader.style.display !== "none") showWidget();
-          }, 8000);
-        }
-
-        /* -- Trigger manual (clique no placeholder ou botão) -- */
-        function onTrigger() {
-          if (widgetInitiated) return;
-          pendingInit = true;
-          showLoader();
-          loadCalendlyAssets(function () {
-            initWidget();
-            startFallbackTimer();
-          });
-          startFallbackTimer();
-        }
-
-        if (placeholder) {
-          placeholder.addEventListener("click", onTrigger);
-          placeholder.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              onTrigger();
-            }
-          });
-        }
-        var trigger = document.getElementById("calendly-trigger");
-        if (trigger)
-          trigger.addEventListener("click", function (e) {
-            e.stopPropagation();
-            onTrigger();
-          });
-
-        /* -- IntersectionObserver duplo:
-        • 800px de antecipação → pré-carrega assets (download silencioso)
-        • 0px (entrada no viewport) → auto-inicia o widget sem precisar clicar -- */
-        if (wrap && "IntersectionObserver" in window) {
-          /* Fase 1: pré-carrega quando ainda está 800px longe */
-          var prefetchObs = new IntersectionObserver(
-            function (entries) {
-              if (entries[0].isIntersecting) {
-                prefetchObs.disconnect();
-                loadCalendlyAssets(); /* baixa assets; não inicia ainda */
-              }
-            },
-            { rootMargin: "800px 0px" },
-          );
-          prefetchObs.observe(wrap);
-
-          /* Fase 2: auto-inicia quando a seção entra na tela */
-          var autoInitObs = new IntersectionObserver(
-            function (entries) {
-              if (entries[0].isIntersecting) {
-                autoInitObs.disconnect();
-                pendingInit = true;
-                /* Se os assets já carregaram → inicia agora; senão pendingInit vai fazer isso */
-                if (typeof window.Calendly !== "undefined") {
-                  initWidget();
-                  startFallbackTimer();
-                } else {
-                  /* Garante que o loader apareça enquanto aguarda o JS */
-                  showLoader();
-                  startFallbackTimer();
-                }
-              }
-            },
-            { rootMargin: "0px", threshold: 0.05 },
-          );
-          autoInitObs.observe(wrap);
-        }
       })();
     </script>
-
     <!-- Instagram embed JS — async, não bloqueia -->
     <script async src="https://www.instagram.com/embed.js"></script>
   </body>
